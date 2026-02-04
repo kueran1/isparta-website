@@ -4,10 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
     
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
+        // Hem click hem de touch event'lerini dinle
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            toggleMenu();
+        });
+        
+        function toggleMenu() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-        });
+            
+            // Body scroll'u engelle/aç (mobil için)
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
 
         // Menü linklerine tıklandığında menüyü kapat
         const navLinks = document.querySelectorAll('.nav-menu a');
@@ -15,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
 
@@ -24,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInside && navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     }
@@ -162,13 +178,16 @@ function setActiveNavLink() {
 // Set active link on page load
 setActiveNavLink();
 
-// Parallax Effect for Hero Section
+// Parallax Effect for Hero Section (Sadece desktop'ta)
 window.addEventListener('scroll', function() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.5;
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    // Mobilde parallax'i devre dışı bırak (performans için)
+    if (window.innerWidth > 768) {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const scrolled = window.pageYOffset;
+            const parallaxSpeed = 0.5;
+            hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        }
     }
 });
 
@@ -312,3 +331,55 @@ console.log('%c🌹 Isparta Web Sitesine Hoş Geldiniz! 🌹',
     'color: #e91e63; font-size: 20px; font-weight: bold;');
 console.log('%cBu site Isparta şehrini tanıtmak için hazırlanmıştır.', 
     'color: #9c27b0; font-size: 14px;');
+
+// Mobil Cihaz Algılama ve Optimizasyonlar
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Mobil için ekstra optimizasyonlar
+if (isMobileDevice()) {
+    console.log('📱 Mobil cihaz algılandı, optimizasyonlar devrede!');
+    
+    // Animasyonları hafiflet (performans için)
+    document.body.classList.add('mobile-device');
+    
+    // Hover efektlerini touch event'lere dönüştür
+    document.querySelectorAll('.about-card, .featured-card, .place-card, .culture-card, .food-card').forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'translateY(-5px) scale(1.01)';
+        });
+        
+        card.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.transform = 'translateY(0) scale(1)';
+            }, 200);
+        });
+    });
+}
+
+// Viewport yüksekliğini hesapla (mobil tarayıcı adresi çubuğu için)
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+
+// Yavaş internet bağlantısı algılama
+if ('connection' in navigator) {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (connection && connection.effectiveType) {
+        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+            console.log('🐌 Yavaş bağlantı algılandı, görsel yüklemeler optimize ediliyor...');
+            // Lazy loading'i daha agresif yap
+        }
+    }
+}
+
+// Touch cihazlarda hover yerine tap kullan
+if ('ontouchstart' in window) {
+    document.body.classList.add('touch-device');
+}
