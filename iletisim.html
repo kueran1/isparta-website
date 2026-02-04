@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Isparta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>🌹 ISPARTA</h1>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="tarih.html">Tarih</a></li>
+                        <li><a href="gezilecek-yerler.html">Gezilecek Yerler</a></li>
+                        <li><a href="kultur.html">Kültür</a></li>
+                        <li><a href="yemekler.html">Yemekler</a></li>
+                        <li><a href="iletisim.html" class="active">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>İletişim</h1>
+            <p>Bizimle iletişime geçin</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>İletişim Bilgileri</h2>
+                    <p>Isparta hakkında sorularınız için bize ulaşabilirsiniz.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-text">
+                                <h3>Adres</h3>
+                                <p>Isparta Belediyesi<br>Merkez, Isparta, Türkiye</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-text">
+                                <h3>Telefon</h3>
+                                <p>+90 246 XXX XX XX</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <div class="info-text">
+                                <h3>E-posta</h3>
+                                <p>info@isparta.gov.tr</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">🕐</div>
+                            <div class="info-text">
+                                <h3>Çalışma Saatleri</h3>
+                                <p>Pazartesi - Cuma: 08:30 - 17:30<br>Cumartesi - Pazar: Kapalı</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <h3>Sosyal Medya</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-btn">📘 Facebook</a>
+                            <a href="#" class="social-btn">📷 Instagram</a>
+                            <a href="#" class="social-btn">🐦 Twitter</a>
+                            <a href="#" class="social-btn">▶️ YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Mesaj Gönderin</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-posta *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Konu *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Seçiniz...</option>
+                                <option value="genel">Genel Bilgi</option>
+                                <option value="turizm">Turizm Danışma</option>
+                                <option value="kultur">Kültür ve Etkinlikler</option>
+                                <option value="oneri">Öneri ve Şikayet</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Gönder</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+
+            <div class="visit-info">
+                <h2>Isparta'ya Nasıl Gidilir?</h2>
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <div class="transport-icon">✈️</div>
+                        <h3>Hava Yolu</h3>
+                        <p>Isparta Süleyman Demirel Havalimanı İstanbul, Ankara ve İzmir'den direkt uçuşlar düzenlemektedir. Havalimanı şehir merkezine yaklaşık 30 km uzaklıktadır.</p>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚌</div>
+                        <h3>Otobüs</h3>
+                        <p>Türkiye'nin birçok ilinden Isparta'ya otobüs seferleri bulunmaktadır. Şehirler arası otobüs firmaları düzenli sefer yapmaktadır.</p>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚗</div>
+                        <h3>Özel Araç</h3>
+                        <p>Antalya'dan D-650 karayolu ile yaklaşık 2 saat, Ankara'dan yaklaşık 4.5 saat sürmektedir. Karayolu bağlantıları oldukça iyidir.</p>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚉</div>
+                        <h3>Tren</h3>
+                        <p>En yakın tren istasyonu Burdur'dadır. Burdur'dan Isparta'ya otobüs veya servislerle ulaşım sağlanabilir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-facts">
+                <h2>Hızlı Bilgiler</h2>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <strong>Alan Kodu:</strong> 0246
+                    </div>
+                    <div class="fact-item">
+                        <strong>Plaka Kodu:</strong> 32
+                    </div>
+                    <div class="fact-item">
+                        <strong>Nüfus:</strong> ~442.000
+                    </div>
+                    <div class="fact-item">
+                        <strong>Rakım:</strong> 1.035 m
+                    </div>
+                    <div class="fact-item">
+                        <strong>Yüzölçümü:</strong> 8.993 km²
+                    </div>
+                    <div class="fact-item">
+                        <strong>İlçe Sayısı:</strong> 13
+                    </div>
+                    <div class="fact-item">
+                        <strong>Bölge:</strong> Akdeniz
+                    </div>
+                    <div class="fact-item">
+                        <strong>İklim:</strong> Karasal
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Isparta</h3>
+                    <p>Gül şehri Isparta, tarihi, doğası ve kültürüyle ziyaretçilerine unutulmaz anlar yaşatır.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="tarih.html">Tarih</a></li>
+                        <li><a href="gezilecek-yerler.html">Gezilecek Yerler</a></li>
+                        <li><a href="kultur.html">Kültür</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <p>📧 info@isparta.gov.tr</p>
+                    <p>📞 +90 246 XXX XX XX</p>
+                    <p>📍 Isparta, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isparta Turizm. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
