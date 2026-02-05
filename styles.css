@@ -72,8 +72,38 @@ header {
 
 .logo h1 {
     color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #fff, #ffd700, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+    animation: logoGlow 3s ease-in-out infinite;
+    position: relative;
+    display: inline-block;
+}
+
+.logo h1::before {
+    content: '🌹 ISPARTA';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+                 0 0 40px rgba(255, 105, 180, 0.3);
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    }
+    50% {
+        filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    }
 }
 
 .nav-menu {
